@@ -1,6 +1,55 @@
 apiVersion: v1
 entries:
+  aaw-financial-data-reconciliation:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2023-03-27T18:59:59.632919588Z"
+    description: A Helm chart for AAW Financial Data Reconciliation
+    digest: 3cb6a146066012c835b643d0b465b7c3ce1a3a8b993ac131ac9bfd5839b7dbdc
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    maintainers:
+    - email: marc-andre.menard@statcan.gc.ca
+      name: Marc-André Ménard
+    name: aaw-financial-data-reconciliation
+    sources:
+    - https://github.com/StatCan/aaw-financial-data-reconciliation
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/aaw-financial-data-reconciliation-0.1.5/aaw-financial-data-reconciliation-0.1.5.tgz
+    version: 0.1.5
   analytics-platform:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: "2023-03-27T18:59:59.977749834Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 7.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 10.5.6
+    description: The Portal for the Analytics Platform DAaaS Portal
+    digest: c0882ecf84c1d5d6a51116c91e2b122b463a8a8310963dcecf002d9a774ef971
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    keywords:
+    - flask
+    - python
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    - email: justin.bertrand@canada.ca
+      name: justmbert
+    name: analytics-platform
+    sources:
+    - https://repo.private.example.ca/analytics-platform/web-portal
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/analytics-platform-0.0.14/analytics-platform-0.0.14.tgz
+    version: 0.0.14
   - apiVersion: v1
     appVersion: 0.0.1
     created: "2021-10-18T15:15:59.664267519Z"
@@ -33,7 +82,41 @@ entries:
     urls:
     - https://statcan.github.io/charts/analytics-platform-0.0.13.tgz
     version: 0.0.13
+  argo-controller:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-03-27T19:00:00.149242411Z"
+    description: A Helm chart for the Statistics Canada Argo Controller.
+    digest: 304548df29934a1afbe4036397a22244f71b71e2506c78f668ce6c4be6f9d564
+    name: argo-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/argo-controller-0.0.9/argo-controller-0.0.9.tgz
+    version: 0.0.9
   argocd-operator:
+  - apiVersion: v2
+    appVersion: v0.4.0
+    created: "2023-03-27T19:00:00.708397276Z"
+    description: A Helm chart for ArgoCD Operator
+    digest: 8d6daf98f1200bb9d540fe6870c9174b9df7f58c64fd2bd9505c48eeeefa1972
+    home: https://argocd-operator.readthedocs.io/
+    icon: https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/argo-cd/icon.png
+    keywords:
+    - argocd
+    - cd
+    - gitops
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    name: argocd-operator
+    sources:
+    - https://github.com/argoproj-labs/argocd-operator
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/argocd-operator-0.4.1/argocd-operator-0.4.1.tgz
+    version: 0.4.1
   - apiVersion: v2
     appVersion: v0.0.15
     created: "2021-10-18T15:15:59.673679489Z"
@@ -209,6 +292,48 @@ entries:
     urls:
     - https://statcan.github.io/charts/ckan-1.0.24.tgz
     version: 1.0.24
+  - apiVersion: v2
+    appVersion: 2.9.5
+    created: "2023-03-27T19:00:01.197285127Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 12.10.1
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 10.2.0
+    - condition: solr.enabled
+      name: solr
+      repository: https://statcan.github.io/charts
+      version: 1.5.8
+    - condition: datapusher.enabled
+      name: datapusher
+      repository: https://statcan.github.io/charts
+      version: 1.0.0
+    description: CKAN Helm Chart for Kubernetes.
+    digest: 148b699a8dc5798894eb52474d128bf43da291ac1833c8e584e20fb395d26377
+    home: https://ckan.org/
+    icon: https://ckan.org/static/img/logo.svg
+    keywords:
+    - ckan
+    - http
+    - web
+    - application
+    - python
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    name: ckan
+    sources:
+    - https://github.com/drupalwxt/wxt
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/ckan-0.0.23/ckan-0.0.23.tgz
+    version: 0.0.23
   - apiVersion: v2
     appVersion: 2.9.2
     created: "2021-10-18T15:15:59.740519193Z"
@@ -755,6 +880,17 @@ entries:
     urls:
     - https://statcan.github.io/charts/ckan-0.0.1.tgz
     version: 0.0.1
+  cnp-controller:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-03-27T19:00:01.429628848Z"
+    description: A Helm chart for the Statistics Canada CNP Controller.
+    digest: 2bc0982e8d2a151b81c473465dc6a0f6465909449a9d29c5856a39dd44fb51e6
+    name: cnp-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/cnp-controller-0.0.1/cnp-controller-0.0.1.tgz
+    version: 0.0.1
   cost-analyzer:
   - apiVersion: v2
     appVersion: 1.82.2
@@ -1199,6 +1335,17 @@ entries:
     urls:
     - https://statcan.github.io/charts/csi-vault-0.0.1.tgz
     version: 0.0.1
+  custom-istio-responses:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-27T19:00:01.627512044Z"
+    description: Custom response templates for Istio
+    digest: 79e8d6d296fd1de95b82e48aa7ad59f38ec7a12836793f72b629b5fec0f93c4a
+    name: custom-istio-responses
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/custom-istio-responses-1.0.1/custom-istio-responses-1.0.1.tgz
+    version: 1.0.1
   datapusher:
   - apiVersion: v2
     appVersion: 0.0.17
@@ -1239,6 +1386,20 @@ entries:
     - https://statcan.github.io/charts/dotstatsuite-0.2.8.tgz
     version: 0.2.8
   dremio:
+  - apiVersion: v2
+    created: "2023-03-27T19:00:02.17686812Z"
+    description: 'Dremio is an open source platform providing the missing link in
+      modern data. '
+    digest: ddc635172ccce4e2e1c0d49c10fd7effa591cebe0aa88490ee8783d180047d44
+    home: https://www.dremio.com/
+    keywords:
+    - dremio
+    - data
+    name: dremio
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/dremio-2.0.2/dremio-2.0.2.tgz
+    version: 2.0.2
   - apiVersion: v2
     appVersion: 4.2.0
     created: "2021-10-18T15:16:00.050797386Z"
@@ -1290,6 +1451,31 @@ entries:
     - https://statcan.github.io/charts/dremio-0.0.1.tgz
     version: 0.0.1
   fdi-dotstatsuite:
+  - apiVersion: v2
+    appVersion: 7.2.0
+    created: "2023-03-27T19:00:02.372081183Z"
+    dependencies:
+    - condition: mssql-linux.enabled
+      name: mssql-linux
+      repository: https://charts.helm.sh/stable
+      version: 0.11.4
+    description: fdi-dotstatsuite kube core services
+    digest: 79ff3e8e4d7c0bf2e8055c2a1dba775e9256a053629351384f3b90cd1259f37c
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: Zachary Seguin
+    - email: tim.raizenne@canada.ca
+      name: Tim Raizenne
+    name: fdi-dotstatsuite
+    sources:
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/tree/master/staging
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-0.2.19/fdi-dotstatsuite-0.2.19.tgz
+    version: 0.2.19
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-10-18T15:16:00.062545597Z"
@@ -1344,7 +1530,118 @@ entries:
     urls:
     - https://statcan.github.io/charts/fdi-dotstatsuite-0.2.9.tgz
     version: 0.2.9
+  fdi-dotstatsuite-config:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-03-27T19:00:02.609087036Z"
+    description: fdi-dotstatsuite-config
+    digest: cc64e764ceb219a780f9c2a97f89aa998d6e523721724e649e8c34c08d90c1be
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: tim.raizenne@statcan.gc.ca
+      name: Timothy Raizenne
+    name: fdi-dotstatsuite-config
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/analytics-platform/fdi-idf/metadata
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-config-0.2.0/fdi-dotstatsuite-config-0.2.0.tgz
+    version: 0.2.0
+  fdi-dotstatsuite-de-dv:
+  - apiVersion: v2
+    appVersion: v14.0.0
+    created: "2023-03-27T19:00:02.830854128Z"
+    description: fdi-dotstatsuite helm chart for the Data Explorer and Data Viewer
+    digest: acd3ac18b2c9364e57d48832900976a83f6e0ea60aca3290a01e26016b321bbc
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: tim.raizenne@statcan.gc.ca
+      name: Timothy Raizenne
+    name: fdi-dotstatsuite-de-dv
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/analytics-platform/fdi-idf/metadata
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-de-dv-0.3.0/fdi-dotstatsuite-de-dv-0.3.0.tgz
+    version: 0.3.0
+  fdi-dotstatsuite-dlm:
+  - apiVersion: v2
+    appVersion: v14.0.0
+    created: "2023-03-27T19:00:03.015690772Z"
+    description: fdi-dotstatsuite helm chart for the Data Lifecycle Manager
+    digest: b401b59d7741df721e7f8cc2925183fd23cd9111c24f73912beed2c4f49ea356
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: tim.raizenne@statcan.gc.ca
+      name: Timothy Raizenne
+    name: fdi-dotstatsuite-dlm
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/analytics-platform/fdi-idf/metadata
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-dlm-0.3.1/fdi-dotstatsuite-dlm-0.3.1.tgz
+    version: 0.3.1
+  fdi-eck:
+  - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2023-03-27T19:00:03.231823482Z"
+    description: Helm chart for fluentd configmap
+    digest: decb190d5cccde71d807538e6fce98b35cfc5ff86e98ec20b238ee4ba98210ad
+    name: fdi-eck
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-eck-0.5.0/fdi-eck-0.5.0.tgz
+    version: 0.5.0
+  fdi-search-api:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: "2023-03-27T19:00:03.587156953Z"
+    description: The api for the search and discovery
+    digest: 8707c41ae8cb47101c67ceea7eb321ebbfc124cecb9a20142f900c09aab5ab43
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    keywords:
+    - flask
+    - python
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    - email: justin.bertrand@canada.ca
+      name: justmbert
+    name: fdi-search-api
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/fdi-search-api/fdi-idf/metadata/fdi-search-direcovery-api.git
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-search-api-1.0.0/fdi-search-api-1.0.0.tgz
+    version: 1.0.0
   fluentd-operator:
+  - apiVersion: v2
+    appVersion: 1.16.5
+    created: "2023-03-27T19:00:03.794388818Z"
+    description: Distribution of Fluentd as K8S daemonset
+    digest: ada08cc37a2933f1b3dfc3771f9c6ef89e48cc9b65696fd01acbb46bb7d79b44
+    home: https://github.com/vmware/kube-fluentd-operator
+    keywords:
+    - fluentd
+    - operator
+    maintainers:
+    - email: william.hearn@statcan.gc.ca
+      name: sylus
+    - email: zachary.seguin@statcan.gc.ca
+      name: Zachary Seguin
+    - email: julie.dion@statcan.gc.ca
+      name: Julie Dion
+    name: fluentd-operator
+    sources:
+    - https://github.com/vmware/kube-fluentd-operator
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fluentd-operator-0.5.1/fluentd-operator-0.5.1.tgz
+    version: 0.5.1
   - apiVersion: v2
     appVersion: 1.13.0
     created: "2021-10-18T15:16:00.075650733Z"
@@ -1414,6 +1711,22 @@ entries:
   geoserver:
   - apiVersion: v2
     appVersion: 2.18.2
+    created: "2023-03-27T19:00:04.031899697Z"
+    description: A Helm chart for using GeoServer.
+    digest: 0a80908a7f7f74be299662f98de420e798a19a7d67334a8df6c791352e9062f8
+    home: http://geoserver.org
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    name: geoserver
+    sources:
+    - https://github.com/statcan/geoserver
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/geoserver-0.0.3/geoserver-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 2.18.2
     created: "2021-10-18T15:16:00.076237544Z"
     description: A Helm chart for using GeoServer.
     digest: 75ecf024bc388205010c52557d409073993c9cefc460a85ff69d1208e7272776
@@ -1450,7 +1763,52 @@ entries:
     urls:
     - https://statcan.github.io/charts/gitlab-runner-0.19.0-beta.tgz
     version: 0.19.0-beta
+  hive-metastore:
+  - apiVersion: v2
+    appVersion: 3.0.0
+    created: "2023-03-27T19:00:04.223396174Z"
+    description: Apache Hive standalone metastore
+    digest: 3c75a3eb8cbf5f3d10ea9c995a94cce9a1b094bd14dadc60f42b93fda7b33ff1
+    home: https://hive.apache.org/
+    icon: https://hive.apache.org/images/hive_logo_medium.jpg
+    name: hive-metastore
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/hive-metastore-0.2.0/hive-metastore-0.2.0.tgz
+    version: 0.2.0
+  inferenceservices-controller:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-03-27T19:00:04.397011457Z"
+    description: A Helm chart for the Statistics Canada Kubeflow Inferenceservices
+      Controller.
+    digest: 0ca63fa39e42f5673e77bb674b99eb3c28b7bec20a8f97be8b29461b8176f71b
+    name: inferenceservices-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/inferenceservices-controller-0.0.1/inferenceservices-controller-0.0.1.tgz
+    version: 0.0.1
   ingress-istio-controller:
+  - apiVersion: v2
+    appVersion: v1.3.2
+    created: "2023-03-27T19:00:04.592038411Z"
+    description: An Ingress controller for Istio which converts Kubernetes Ingresses
+      into VirtualServices.
+    digest: 7d429bc0eb9732505ad6cf559ee135ca31aa60d4ec5a27e433b9186ff60908c7
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: Zachary Seguin
+    - email: justin.bertrand@canada.ca
+      name: Justin Bertrand
+    name: ingress-istio-controller
+    sources:
+    - https://github.com/StatCan/ingress-istio-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/ingress-istio-controller-1.2.3/ingress-istio-controller-1.2.3.tgz
+    version: 1.2.3
   - apiVersion: v2
     appVersion: v1.0.0
     created: "2021-10-18T15:16:00.077807572Z"
@@ -1473,6 +1831,19 @@ entries:
     - https://statcan.github.io/charts/ingress-istio-controller-1.0.0.tgz
     version: 1.0.0
   istio-ingress-gateway:
+  - apiVersion: v2
+    created: "2023-03-27T19:00:04.790617643Z"
+    description: 'This chart deploys an opinionated Istio ngress-gateway. It uses
+      the Istio Operator to deploy the Istio components and cert-manager to handle
+      certificate generation.  Currently, only HTTPS configurations are available
+      (with automatic HTTPS redirect from HTTP if configured), however, more Gateways
+      and capbabilities may be added when the need arises. '
+    digest: 0f99defaf3bfc3a0cf3ddb9d11b470a327b845c4fdaa6dd5f008be87f660ad04
+    name: istio-ingress-gateway
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/istio-ingress-gateway-2.5.5/istio-ingress-gateway-2.5.5.tgz
+    version: 2.5.5
   - apiVersion: v2
     created: "2021-10-18T15:16:00.079407001Z"
     description: 'This chart deploys an opinionated Istio ngress-gateway. It uses
@@ -1572,6 +1943,28 @@ entries:
   matomo:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-03-27T19:00:04.955561192Z"
+    dependencies:
+    - condition: mariadb.deployChart
+      name: mariadb
+      repository: https://charts.helm.sh/stable
+      version: 5.11.1
+    description: A Helm chart for using Matomo
+    digest: 92b1efe1a705d7b7391b13fb30be0252ac9d58c82962992982f468660e77051c
+    home: https://matomo.org
+    icon: https://bitnami.com/assets/stacks/matomo/img/matomo-stack-110x117.png
+    maintainers:
+    - email: jean-philippe.tissot@canada.ca
+      name: jptissot
+    name: matomo
+    sources:
+    - https://github.com/statcan/StatCan.OrchardCore
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/matomo-0.1.3/matomo-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2021-10-18T15:16:00.091452718Z"
     dependencies:
     - condition: mariadb.deployChart
@@ -1660,6 +2053,23 @@ entries:
   mlflow:
   - apiVersion: v2
     appVersion: 1.7.2
+    created: "2023-03-27T19:00:05.332720406Z"
+    description: '[MLFlow](https://mlflow.org/) is an open source platform specialized
+      in tracking ML experiments, and packaging and deploying ML models. '
+    digest: aa7a84fcac5aee03d6049ef1bdaefba4ea94b67997aaebfbd7b34fe3a9985d78
+    home: https://mlflow.org/
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    name: mlflow
+    sources:
+    - https://github.com/statcan/charts
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/mlflow-0.1.5/mlflow-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.7.2
     created: "2021-10-18T15:16:00.097291224Z"
     description: '[MLFlow](https://mlflow.org/) is an open source platform specialized
       in tracking ML experiments, and packaging and deploying ML models. '
@@ -1740,7 +2150,61 @@ entries:
     urls:
     - https://statcan.github.io/charts/mlflow-0.0.1.tgz
     version: 0.0.1
+  moodle:
+  - annotations:
+      category: E-Learning
+    apiVersion: v2
+    appVersion: 3.11.5
+    created: "2023-03-27T19:00:05.604737374Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 1.x.x
+    description: Moodle(TM) LMS is an open source online Learning Management System
+      widely used at universities, schools, and corporations. It is modular and highly
+      adaptable to any type of online learning.
+    digest: 39a60c939dc215c9884d77d9151b09978e9437f14a07bc3a5153ec8fd6b1e099
+    home: https://github.com/bitnami/charts/tree/master/bitnami/moodle
+    icon: https://bitnami.com/assets/stacks/moodle/img/moodle-stack-220x234.png
+    keywords:
+    - moodle
+    - learning
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: moodle
+    sources:
+    - https://github.com/bitnami/bitnami-docker-moodle
+    - https://www.moodle.org/
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/moodle-12.0.3/moodle-12.0.3.tgz
+    version: 12.0.3
   mutating-webhook:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-27T19:00:05.918418726Z"
+    description: -| A Helm chart for deploying Mutating Webhooks based on https://github.com/StatCan/mutating-webhook.
+      Requires cert-manager.
+    digest: e4a406bbcf44f29f3f22a9b337061bd09ab331a71a0a3f3eb0e47f7494b1ef06
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: zachary.seguin@canada.ca
+      name: Zachary Seguin
+    - email: justin.bertrand@canada.ca
+      name: Justin Bertrand
+    name: mutating-webhook
+    sources:
+    - https://github.com/StatCan/charts/mutating-webhook
+    - https://github.com/StatCan/mutating-webhook
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/mutating-webhook-0.3.0/mutating-webhook-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2021-10-18T15:16:00.099012955Z"
@@ -1801,7 +2265,51 @@ entries:
     urls:
     - https://statcan.github.io/charts/namespace-controller-0.0.1.tgz
     version: 0.0.1
+  nvidia-device-plugin:
+  - apiVersion: v2
+    appVersion: 0.13.0
+    created: "2023-03-27T19:00:06.426401278Z"
+    dependencies:
+    - alias: nfd
+      condition: nfd.enabled,gfd.enabled
+      name: node-feature-discovery
+      repository: ""
+      version: 0.11.0
+    - alias: gfd
+      condition: gfd.enabled
+      name: gpu-feature-discovery
+      repository: ""
+      version: 0.7.0
+    description: A Helm chart for the nvidia-device-plugin on Kubernetes
+    digest: 7fdecf86d940a29bbb977bccce2e4cad78245e1bdcbb17514f10c7a90ef8a866
+    home: https://github.com/NVIDIA/k8s-device-plugin
+    kubeVersion: '>= 1.10.0-0'
+    name: nvidia-device-plugin
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/nvidia-device-plugin-0.13.0/nvidia-device-plugin-0.13.0.tgz
+    version: 0.13.0
   orchard-cms:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-27T19:00:06.67450373Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 9.8.4
+    description: A Helm chart for using OrchardCore cms
+    digest: f52831f33763bd467c48da60179f63c8ffe6b15032e1a1ba6d8b83ea64601dd9
+    home: https://www.orchardcore.net/
+    maintainers:
+    - email: jean-philippe.tissot@canada.ca
+      name: jptissot
+    name: orchard-cms
+    sources:
+    - https://github.com/statcan/StatCan.OrchardCore
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/orchard-cms-2.0.2/orchard-cms-2.0.2.tgz
+    version: 2.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2021-10-18T15:16:00.119738428Z"
@@ -1982,6 +2490,16 @@ entries:
   profiles-controller:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-03-27T19:00:06.83665576Z"
+    description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
+    digest: deff14b6910d92cd18e5f9b0cc4f044f6a5f67796a8914d9e1e4d30ae32fb2ae
+    name: profiles-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/profiles-controller-0.5.34/profiles-controller-0.5.34.tgz
+    version: 0.5.34
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2021-10-18T15:16:00.127251163Z"
     description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
     digest: 44e0b7ece4a487b3aefa96106387446035af98c476622d0bfda0fc6af22fefad
@@ -2143,6 +2661,22 @@ entries:
   shiny:
   - apiVersion: v2
     appVersion: 3.6.0
+    created: "2023-03-27T19:00:07.19972876Z"
+    description: A Helm chart for using Shiny.
+    digest: dae709beac2c8c7471ae90e5cc38f4ff4347e2bd74749af33ecf731bf7d193a9
+    home: https://rstudio.com/products/shiny/shiny-server/
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    name: shiny
+    sources:
+    - https://github.com/statcan/shiny
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/shiny-0.1.3/shiny-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 3.6.0
     created: "2021-10-18T15:16:00.166389369Z"
     description: A Helm chart for using Shiny.
     digest: 3c50a1b7d43303c99cbc2da165f4c605add5c196297c46ba0e9ed15412e65691
@@ -2188,7 +2722,47 @@ entries:
     urls:
     - https://statcan.github.io/charts/shiny-0.0.1.tgz
     version: 0.0.1
+  sidecar-terminator:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2023-03-27T19:00:07.442162614Z"
+    description: A chart used for easily configuring kubernetes-sidecar-terminator
+      in a cluster.
+    digest: 8765c05b7a6239ccea3bc4374ecfdc53a30866e9fb1e7b6d3d8b311e5f87a1e2
+    home: https://www.statcan.gc.ca
+    keywords:
+    - sidecar terminator
+    - ephemeral containers
+    - sidecars
+    kubeVersion: '>= 1.23'
+    maintainers:
+    - email: mohamed.dahrouj@statcan.gc.ca
+      name: Mohamed Dahrouj
+    name: sidecar-terminator
+    sources:
+    - https://github.com/statcan/kubernetes-sidecar-terminator
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/sidecar-terminator-1.3.0/sidecar-terminator-1.3.0.tgz
+    version: 1.3.0
   solr:
+  - apiVersion: v2
+    appVersion: 8.11.1
+    created: "2023-03-27T19:00:07.668086299Z"
+    dependencies:
+    - name: zookeeper
+      repository: https://charts.helm.sh/incubator
+      version: 2.1.3
+    description: A helm chart to install Apache Solr
+    digest: 8773dc38643c6a0aa37496989dd0857b3f93c3b4c6e5ec0c21be8386b53b00be
+    home: http://lucene.apache.org/solr/
+    keywords:
+    - solr
+    name: solr
+    sources:
+    - https://gitbox.apache.org/repos/asf?p=lucene-solr.git
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/solr-1.5.8/solr-1.5.8.tgz
+    version: 1.5.8
   - apiVersion: v2
     appVersion: 8.4.0
     created: "2021-10-18T15:16:00.172295275Z"
@@ -2316,6 +2890,22 @@ entries:
     version: 0.2.8+1
   starboard-operator:
   - apiVersion: v2
+    appVersion: 0.15.4
+    created: "2023-03-27T19:00:08.082016175Z"
+    description: Keeps security report resources updated
+    digest: 064a671bf2cb0115f2536b4015840080101f54678ceca8c18f0826bff800cda9
+    keywords:
+    - aquasecurity
+    - starboard
+    - trivy
+    name: starboard-operator
+    sources:
+    - https://github.com/aquasecurity/starboard
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/starboard-operator-0.10.4/starboard-operator-0.10.4.tgz
+    version: 0.10.4
+  - apiVersion: v2
     appVersion: 0.8.0
     created: "2021-10-18T15:16:00.179843711Z"
     description: A Helm chart for starboard-operator.
@@ -2381,7 +2971,44 @@ entries:
     urls:
     - https://statcan.github.io/charts/starboard-operator-0.1.0.tgz
     version: 0.1.0
+  trino:
+  - apiVersion: v2
+    appVersion: "405"
+    created: "2023-03-27T19:00:08.294336845Z"
+    description: Fast distributed SQL query engine for big data analytics that helps
+      you explore your data universe
+    digest: 8045ac90515cc9dc76b8008fd5bab2bd9d3c8841dcd090c636c3fd0681ca3a02
+    home: https://trino.io/
+    icon: https://trino.io/assets/trino.png
+    maintainers:
+    - name: Trino community
+    name: trino
+    sources:
+    - https://github.com/trinodb/charts
+    - https://github.com/trinodb/trino/tree/master/core/docker
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/trino-1.23.2/trino-1.23.2.tgz
+    version: 1.23.2
   varnish:
+  - apiVersion: v2
+    appVersion: 6.6.0
+    created: "2023-03-27T19:00:08.477754694Z"
+    description: A Helm chart for using Varnish.
+    digest: 5d35f8db2db728f8a73c5b81b682478529f633449d7b6b869caf1fcb4c90502e
+    home: https://www.varnish-software.com
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    name: varnish
+    sources:
+    - https://github.com/varnish
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/varnish-0.2.2/varnish-0.2.2.tgz
+    version: 0.2.2
   - apiVersion: v2
     appVersion: 6.6.0
     created: "2021-10-18T15:16:00.184289592Z"
@@ -2666,6 +3293,29 @@ entries:
     - https://statcan.github.io/charts/velero-0.0.2.tgz
     version: 0.0.2
   vetting:
+  - apiVersion: v2
+    appVersion: "2.0"
+    created: "2023-03-27T19:00:08.69439019Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 9.4.1
+    description: A Helm chart for Disclosure Vetting Application
+    digest: e6512e66f4894b6a7aa67a3e272027320baa1c806822acfad0c67c774769a32a
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    maintainers:
+    - email: marc-andre.menard@statcan.gc.ca
+      name: Marc-André Ménard
+    - email: mathis.marcotte@statcan.gc.ca
+      name: Mathis Marcotte
+    name: vetting
+    sources:
+    - https://github.com/StatCan/disclosure-vetting-application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/vetting-0.1.169/vetting-0.1.169.tgz
+    version: 0.1.169
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:16:00.290851312Z"
@@ -3339,4 +3989,4 @@ entries:
     urls:
     - https://statcan.github.io/charts/vetting-0.1.4.tgz
     version: 0.1.4
-generated: "2021-10-18T15:15:59.656890586Z"
+generated: "2023-03-27T19:00:08.695374942Z"
