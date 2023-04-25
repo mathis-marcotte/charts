@@ -2550,6 +2550,16 @@ entries:
   profiles-controller:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-04-25T18:27:48.397424364Z"
+    description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
+    digest: 38322849d506a07d4f57e2345ffa419e9ebe4148c9df524c7cdfc3a07ea4d58e
+    name: profiles-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/profiles-controller-0.5.37/profiles-controller-0.5.37.tgz
+    version: 0.5.37
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-04-25T18:24:15.112436442Z"
     description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
     digest: c81d50728de03e75837ce4f339b72487c131b2809d56fc89e5d35e0444f6685a
@@ -4077,4 +4087,4 @@ entries:
     urls:
     - https://statcan.github.io/charts/vetting-0.1.4.tgz
     version: 0.1.4
-generated: "2023-04-25T18:24:15.256487572Z"
+generated: "2023-04-25T18:27:48.398468688Z"
