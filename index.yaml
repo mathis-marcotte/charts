@@ -294,6 +294,48 @@ entries:
     version: 1.0.24
   - apiVersion: v2
     appVersion: 2.9.5
+    created: "2023-04-25T18:24:14.827539378Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 12.10.1
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 10.2.0
+    - condition: solr.enabled
+      name: solr
+      repository: https://statcan.github.io/charts
+      version: 1.5.8
+    - condition: datapusher.enabled
+      name: datapusher
+      repository: https://statcan.github.io/charts
+      version: 1.0.0
+    description: CKAN Helm Chart for Kubernetes.
+    digest: c01ffd08664e691443adae6b36968c5e3346eb81878c43918fc3f43c070409ed
+    home: https://ckan.org/
+    icon: https://ckan.org/static/img/logo.svg
+    keywords:
+    - ckan
+    - http
+    - web
+    - application
+    - python
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    name: ckan
+    sources:
+    - https://github.com/drupalwxt/wxt
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/ckan-0.0.24/ckan-0.0.24.tgz
+    version: 0.0.24
+  - apiVersion: v2
+    appVersion: 2.9.5
     created: "2023-03-27T19:00:01.197285127Z"
     dependencies:
     - condition: redis.enabled
@@ -1584,6 +1626,24 @@ entries:
     urls:
     - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-dlm-0.3.1/fdi-dotstatsuite-dlm-0.3.1.tgz
     version: 0.3.1
+  fdi-dotstatsuite-sfs-solr:
+  - apiVersion: v2
+    appVersion: v14.0.0
+    created: "2023-04-25T18:24:14.97041561Z"
+    description: fdi-dotstatsuite helm chart for the Data Explorer and Data Viewer
+    digest: 772286e460a7c87c9347d38bdacae090597c67085843b1e08d818435c4cc7965
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: Jianlong.qian@statcan.gc.ca
+      name: Jianlong Qian
+    name: fdi-dotstatsuite-sfs-solr
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/analytics-platform/fdi-idf/metadata
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-sfs-solr-1.0.0/fdi-dotstatsuite-sfs-solr-1.0.0.tgz
+    version: 1.0.0
   fdi-eck:
   - apiVersion: v2
     appVersion: 1.2.0
@@ -2490,6 +2550,16 @@ entries:
   profiles-controller:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-04-25T18:24:15.112436442Z"
+    description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
+    digest: c81d50728de03e75837ce4f339b72487c131b2809d56fc89e5d35e0444f6685a
+    name: profiles-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/profiles-controller-0.5.36/profiles-controller-0.5.36.tgz
+    version: 0.5.36
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-03-27T19:00:06.83665576Z"
     description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
     digest: deff14b6910d92cd18e5f9b0cc4f044f6a5f67796a8914d9e1e4d30ae32fb2ae
@@ -2972,6 +3042,24 @@ entries:
     - https://statcan.github.io/charts/starboard-operator-0.1.0.tgz
     version: 0.1.0
   trino:
+  - apiVersion: v2
+    appVersion: "405"
+    created: "2023-04-25T18:24:15.255783573Z"
+    description: Fast distributed SQL query engine for big data analytics that helps
+      you explore your data universe
+    digest: 041a96411a1ad0266ae5fac060ee8956a451e19ec5a8485a40e6e33f67fd6a25
+    home: https://trino.io/
+    icon: https://trino.io/assets/trino.png
+    maintainers:
+    - name: Trino community
+    name: trino
+    sources:
+    - https://github.com/trinodb/charts
+    - https://github.com/trinodb/trino/tree/master/core/docker
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/trino-1.23.4/trino-1.23.4.tgz
+    version: 1.23.4
   - apiVersion: v2
     appVersion: "405"
     created: "2023-03-27T19:00:08.294336845Z"
@@ -3989,4 +4077,4 @@ entries:
     urls:
     - https://statcan.github.io/charts/vetting-0.1.4.tgz
     version: 0.1.4
-generated: "2023-03-27T19:00:08.695374942Z"
+generated: "2023-04-25T18:24:15.256487572Z"
