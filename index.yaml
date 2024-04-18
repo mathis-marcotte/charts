@@ -3,6 +3,22 @@ entries:
   aaw-financial-data-reconciliation:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-04-18T13:35:24.866904166Z"
+    description: A Helm chart for AAW Financial Data Reconciliation
+    digest: dd7c581277d24a39d9c6d05cb87f36c2ee036d37719efdaafa83eaff0b363b12
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    maintainers:
+    - email: marc-andre.menard@statcan.gc.ca
+      name: Marc-André Ménard
+    name: aaw-financial-data-reconciliation
+    sources:
+    - https://github.com/StatCan/aaw-financial-data-reconciliation
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/aaw-financial-data-reconciliation-0.1.6/aaw-financial-data-reconciliation-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2023-03-27T18:59:59.632919588Z"
     description: A Helm chart for AAW Financial Data Reconciliation
     digest: 3cb6a146066012c835b643d0b465b7c3ce1a3a8b993ac131ac9bfd5839b7dbdc
@@ -85,6 +101,16 @@ entries:
   argo-controller:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2024-04-18T13:35:25.228777123Z"
+    description: A Helm chart for the Statistics Canada Argo Controller.
+    digest: c448b2f47b10a12c431945f8d8bb5fcfc133a5ff37c0015193e637637763f793
+    name: argo-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/argo-controller-0.0.10/argo-controller-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-03-27T19:00:00.149242411Z"
     description: A Helm chart for the Statistics Canada Argo Controller.
     digest: 304548df29934a1afbe4036397a22244f71b71e2506c78f668ce6c4be6f9d564
@@ -94,6 +120,30 @@ entries:
     - https://github.com/mathis-marcotte/charts/releases/download/argo-controller-0.0.9/argo-controller-0.0.9.tgz
     version: 0.0.9
   argocd-operator:
+  - apiVersion: v2
+    appVersion: v0.4.0
+    created: "2024-04-18T13:35:25.365580903Z"
+    description: A Helm chart that deploys ArgoCD Operator. The ArgoCD Operator manages
+      ArgoCD installation and components
+    digest: f052ac622f03ea62a8a77746621dbf741ce53568d457f9b93122dd4f16793244
+    home: https://argocd-operator.readthedocs.io/
+    icon: https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/argo-cd/icon.png
+    keywords:
+    - argocd
+    - cd
+    - gitops
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    name: argocd-operator
+    sources:
+    - https://github.com/argoproj-labs/argocd-operator
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/argocd-operator-0.5.0/argocd-operator-0.5.0.tgz
+    version: 0.5.0
   - apiVersion: v2
     appVersion: v0.4.0
     created: "2023-03-27T19:00:00.708397276Z"
@@ -264,6 +314,24 @@ entries:
     urls:
     - https://statcan.github.io/charts/cert-manager-istio-controller-0.1.0.tgz
     version: 0.1.0
+  cidr-allocator:
+  - apiVersion: v2
+    appVersion: v0.4.2
+    created: "2024-04-18T13:35:25.494764681Z"
+    description: A Helm chart to deploy the STATCAN CIDR-Allocator Controller and
+      CRDs to a Kubernetes Cluster
+    digest: 6366cd00a8f7ab44e4a7f65ca010456fb912789c22ea8e2f1e3760469e74abfc
+    home: https://statcan.gc.ca
+    keywords:
+    - Kubernetes
+    - Networking
+    - Node
+    kubeVersion: '>= 1.16.0-0'
+    name: cidr-allocator
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/cidr-allocator-1.0.2/cidr-allocator-1.0.2.tgz
+    version: 1.0.2
   ckan:
   - apiVersion: v2
     appVersion: 2.9.2
@@ -292,6 +360,46 @@ entries:
     urls:
     - https://statcan.github.io/charts/ckan-1.0.24.tgz
     version: 1.0.24
+  - apiVersion: v2
+    appVersion: 2.9.5
+    created: "2024-04-18T13:35:25.63285639Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 12.10.1
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 10.2.0
+    - condition: solr.enabled
+      name: solr
+      repository: https://statcan.github.io/charts
+      version: 1.5.8
+    - condition: datapusher.enabled
+      name: datapusher
+      repository: https://statcan.github.io/charts
+      version: 1.0.0
+    description: CKAN Helm Chart for Kubernetes.
+    digest: b40e9f4ee2f8bbb10a70863898a30c2db56fc068706cb8e4f12278738338162a
+    home: https://ckan.org/
+    icon: https://ckan.org/static/img/logo.svg
+    keywords:
+    - ckan
+    - http
+    - web
+    - application
+    - python
+    maintainers:
+    - email: jianlong.qian@canada.ca
+      name: Jianlong
+    name: ckan
+    sources:
+    - https://github.com/drupalwxt/wxt
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/ckan-0.0.26/ckan-0.0.26.tgz
+    version: 0.0.26
   - apiVersion: v2
     appVersion: 2.9.5
     created: "2023-04-25T18:24:14.827539378Z"
@@ -924,6 +1032,16 @@ entries:
     version: 0.0.1
   cnp-controller:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2024-04-18T13:35:25.775719908Z"
+    description: A Helm chart for the Statistics Canada CNP Controller.
+    digest: 20a6136f6655d8d903238b52012cfe2c8d7d410dc3a7a2c8478225527ad6e4fe
+    name: cnp-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/cnp-controller-0.0.4/cnp-controller-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2023-03-27T19:00:01.429628848Z"
     description: A Helm chart for the Statistics Canada CNP Controller.
@@ -1495,6 +1613,31 @@ entries:
   fdi-dotstatsuite:
   - apiVersion: v2
     appVersion: 7.2.0
+    created: "2024-04-18T13:35:25.907709768Z"
+    dependencies:
+    - condition: mssql-linux.enabled
+      name: mssql-linux
+      repository: https://charts.helm.sh/stable
+      version: 0.11.4
+    description: fdi-dotstatsuite kube core services
+    digest: e5103a5e46121618c038ad78db7760ed6a02b66d9b954a9dda182f908089cebd
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: Zachary Seguin
+    - email: jianlong.qian@statcan.gc.ca
+      name: Jianlong.qian
+    name: fdi-dotstatsuite
+    sources:
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/tree/master/staging
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-0.2.21/fdi-dotstatsuite-0.2.21.tgz
+    version: 0.2.21
+  - apiVersion: v2
+    appVersion: 7.2.0
     created: "2023-03-27T19:00:02.372081183Z"
     dependencies:
     - condition: mssql-linux.enabled
@@ -1629,6 +1772,23 @@ entries:
   fdi-dotstatsuite-sfs-solr:
   - apiVersion: v2
     appVersion: v14.0.0
+    created: "2024-04-18T13:35:26.042683628Z"
+    description: fdi-dotstatsuite helm chart for the Data Explorer and Data Viewer
+    digest: ff47e50a55aade134f62165b6caa15dc9d6f422d4682e50fca48099d952a221f
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: Jianlong.qian@statcan.gc.ca
+      name: Jianlong Qian
+    name: fdi-dotstatsuite-sfs-solr
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/analytics-platform/fdi-idf/metadata
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-sfs-solr-1.0.1/fdi-dotstatsuite-sfs-solr-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: v14.0.0
     created: "2023-04-25T18:24:14.97041561Z"
     description: fdi-dotstatsuite helm chart for the Data Explorer and Data Viewer
     digest: 772286e460a7c87c9347d38bdacae090597c67085843b1e08d818435c4cc7965
@@ -1643,6 +1803,24 @@ entries:
     type: application
     urls:
     - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-sfs-solr-1.0.0/fdi-dotstatsuite-sfs-solr-1.0.0.tgz
+    version: 1.0.0
+  fdi-dotstatsuite-tenants-vs:
+  - apiVersion: v2
+    appVersion: v14.0.0
+    created: "2024-04-18T13:35:26.178198902Z"
+    description: fdi-dotstatsuite helm chart for the Data Explorer and Data Viewer
+    digest: c6d9e6e593770922428d30d11d848ad83a9f68de4e1988062abb708e7071c050
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: Jianlong.qian@statcan.gc.ca
+      name: Jianlong Qian
+    name: fdi-dotstatsuite-tenants-vs
+    sources:
+    - https://gitlab.k8s.cloud.statcan.ca/analytics-platform/fdi-idf/metadata
+    - https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/fdi-dotstatsuite-tenants-vs-1.0.0/fdi-dotstatsuite-tenants-vs-1.0.0.tgz
     version: 1.0.0
   fdi-eck:
   - apiVersion: v2
@@ -1849,6 +2027,27 @@ entries:
     version: 0.0.1
   ingress-istio-controller:
   - apiVersion: v2
+    appVersion: 1.4.0
+    created: "2024-04-18T13:35:26.417529047Z"
+    description: An Ingress controller for Istio which converts Kubernetes Ingresses
+      into VirtualServices.
+    digest: ac8d86432da4eed4e8dc6913aded7976bfe7c0c66b6930cbf0151bce6cbb32f3
+    home: https://statcan.gc.ca
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: Zachary Seguin
+    - email: justin.bertrand@canada.ca
+      name: Justin Bertrand
+    name: ingress-istio-controller
+    sources:
+    - https://github.com/StatCan/ingress-istio-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/ingress-istio-controller-1.4.0/ingress-istio-controller-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
     appVersion: v1.3.2
     created: "2023-03-27T19:00:04.592038411Z"
     description: An Ingress controller for Istio which converts Kubernetes Ingresses
@@ -1891,6 +2090,19 @@ entries:
     - https://statcan.github.io/charts/ingress-istio-controller-1.0.0.tgz
     version: 1.0.0
   istio-ingress-gateway:
+  - apiVersion: v2
+    created: "2024-04-18T13:35:26.514588212Z"
+    description: 'This chart deploys an opinionated Istio ngress-gateway. It uses
+      the Istio Operator to deploy the Istio components and cert-manager to handle
+      certificate generation.  Currently, only HTTPS configurations are available
+      (with automatic HTTPS redirect from HTTP if configured), however, more Gateways
+      and capbabilities may be added when the need arises. '
+    digest: f98c88bcd554dd3fbf2de64b4d44f9b6a016b318e972c1383ec020ba97a21ac9
+    name: istio-ingress-gateway
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/istio-ingress-gateway-2.6.0/istio-ingress-gateway-2.6.0.tgz
+    version: 2.6.0
   - apiVersion: v2
     created: "2023-03-27T19:00:04.790617643Z"
     description: 'This chart deploys an opinionated Istio ngress-gateway. It uses
@@ -2328,6 +2540,29 @@ entries:
   nvidia-device-plugin:
   - apiVersion: v2
     appVersion: 0.13.0
+    created: "2024-04-18T13:35:26.640967649Z"
+    dependencies:
+    - alias: nfd
+      condition: nfd.enabled,gfd.enabled
+      name: node-feature-discovery
+      repository: ""
+      version: 0.11.0
+    - alias: gfd
+      condition: gfd.enabled
+      name: gpu-feature-discovery
+      repository: ""
+      version: 0.7.0
+    description: A Helm chart for the nvidia-device-plugin on Kubernetes
+    digest: a2abfd44849d9375391647bceaefa2a35e425f4a8752194384b0ce322733fe09
+    home: https://github.com/NVIDIA/k8s-device-plugin
+    kubeVersion: '>= 1.10.0-0'
+    name: nvidia-device-plugin
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/nvidia-device-plugin-0.13.1/nvidia-device-plugin-0.13.1.tgz
+    version: 0.13.1
+  - apiVersion: v2
+    appVersion: 0.13.0
     created: "2023-03-27T19:00:06.426401278Z"
     dependencies:
     - alias: nfd
@@ -2550,6 +2785,16 @@ entries:
   profiles-controller:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2024-04-18T13:35:26.793029972Z"
+    description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
+    digest: 8591c7ab01c8d89db6117d36d44ef49ebeda3f2369544c9362b193e6d194d0e4
+    name: profiles-controller
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/profiles-controller-0.5.47/profiles-controller-0.5.47.tgz
+    version: 0.5.47
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-04-25T18:27:48.397424364Z"
     description: A Helm chart for the Statistics Canada Kubeflow Profiles Controller.
     digest: 38322849d506a07d4f57e2345ffa419e9ebe4148c9df524c7cdfc3a07ea4d58e
@@ -2713,6 +2958,20 @@ entries:
   rotate-elasticsearch-index:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2024-04-18T13:35:26.898941575Z"
+    description: A Helm chart for deploying Elasticsearch index rotation
+    digest: f2b6e463c6964397da36b8c071337278fe13983c70e335e00696c616959bb902
+    home: https://github.com/kairen/rotate-elasticsearch-index
+    maintainers:
+    - email: k2r2.bai@gmail.com
+      name: Kyle Bai
+    name: rotate-elasticsearch-index
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/rotate-elasticsearch-index-0.2.1/rotate-elasticsearch-index-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2021-10-18T15:16:00.16477774Z"
     description: A Helm chart for deploying Elasticsearch index rotation
     digest: f3819a4b4724561fa09d1116460c781504398f959ba64bd6eef0cbac5c019295
@@ -2803,6 +3062,27 @@ entries:
     - https://statcan.github.io/charts/shiny-0.0.1.tgz
     version: 0.0.1
   sidecar-terminator:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-04-18T13:35:27.032395328Z"
+    description: A chart used for easily configuring kubernetes-sidecar-terminator
+      in a cluster.
+    digest: 83a0533a37dd3af31783b120d0d699058fde9f67e4a0892f8ddb78d68203042a
+    home: https://www.statcan.gc.ca
+    keywords:
+    - sidecar terminator
+    - ephemeral containers
+    - sidecars
+    kubeVersion: '>= 1.23'
+    maintainers:
+    - email: mohamed.dahrouj@statcan.gc.ca
+      name: Mohamed Dahrouj
+    name: sidecar-terminator
+    sources:
+    - https://github.com/statcan/kubernetes-sidecar-terminator
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/sidecar-terminator-1.3.3/sidecar-terminator-1.3.3.tgz
+    version: 1.3.3
   - apiVersion: v2
     appVersion: 2.0.0
     created: "2023-03-27T19:00:07.442162614Z"
@@ -3089,6 +3369,24 @@ entries:
     - https://github.com/mathis-marcotte/charts/releases/download/trino-1.23.2/trino-1.23.2.tgz
     version: 1.23.2
   varnish:
+  - apiVersion: v2
+    appVersion: 6.6.0
+    created: "2024-04-18T13:35:27.202202032Z"
+    description: A Helm chart for using Varnish.
+    digest: daa9768f23378960a5196a4814733abfa978903706f485e3d9f021260ef255ac
+    home: https://www.varnish-software.com
+    maintainers:
+    - email: william.hearn@canada.ca
+      name: sylus
+    - email: zachary.seguin@canada.ca
+      name: zachomedia
+    name: varnish
+    sources:
+    - https://github.com/varnish
+    type: application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/varnish-0.2.5/varnish-0.2.5.tgz
+    version: 0.2.5
   - apiVersion: v2
     appVersion: 6.6.0
     created: "2023-03-27T19:00:08.477754694Z"
@@ -3391,6 +3689,29 @@ entries:
     - https://statcan.github.io/charts/velero-0.0.2.tgz
     version: 0.0.2
   vetting:
+  - apiVersion: v2
+    appVersion: "2.0"
+    created: "2024-04-18T13:35:27.336061135Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 9.4.1
+    description: A Helm chart for Disclosure Vetting Application
+    digest: 92336446340edc0d970f4dce8473d4fc361da4ba06f087c3bd4858674c7eb211
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    maintainers:
+    - email: marc-andre.menard@statcan.gc.ca
+      name: Marc-André Ménard
+    - email: mathis.marcotte@statcan.gc.ca
+      name: Mathis Marcotte
+    name: vetting
+    sources:
+    - https://github.com/StatCan/disclosure-vetting-application
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/vetting-0.1.170/vetting-0.1.170.tgz
+    version: 0.1.170
   - apiVersion: v2
     appVersion: "2.0"
     created: "2023-03-27T19:00:08.69439019Z"
@@ -4087,4 +4408,4 @@ entries:
     urls:
     - https://statcan.github.io/charts/vetting-0.1.4.tgz
     version: 0.1.4
-generated: "2023-04-25T18:27:48.398468688Z"
+generated: "2024-04-18T13:35:27.336598971Z"
