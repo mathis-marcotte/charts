@@ -3,6 +3,24 @@ entries:
   aaw-financial-data-reconciliation:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-04-19T12:59:15.637800707Z"
+    description: A Helm chart for AAW Financial Data Reconciliation
+    digest: c010ff14f52e8e70d43f2d4159271e5a370a9a06ddb0d98ecbda5952c5a9cb53
+    home: https://statcan.gc.ca
+    icon: https://www.python.org/static/img/python-logo
+    maintainers:
+    - email: marc-andre.menard@statcan.gc.ca
+      name: Marc-André Ménard
+    - email: mathis.marcotte@statcan.gc.ca
+      name: Mathis Marcotte
+    name: aaw-financial-data-reconciliation
+    sources:
+    - https://github.com/StatCan/aaw-financial-data-reconciliation
+    urls:
+    - https://github.com/mathis-marcotte/charts/releases/download/aaw-financial-data-reconciliation-0.1.7/aaw-financial-data-reconciliation-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2024-04-18T13:35:24.866904166Z"
     description: A Helm chart for AAW Financial Data Reconciliation
     digest: dd7c581277d24a39d9c6d05cb87f36c2ee036d37719efdaafa83eaff0b363b12
@@ -4408,4 +4426,4 @@ entries:
     urls:
     - https://statcan.github.io/charts/vetting-0.1.4.tgz
     version: 0.1.4
-generated: "2024-04-18T13:35:27.336598971Z"
+generated: "2024-04-19T12:59:15.785517633Z"
